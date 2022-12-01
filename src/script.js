@@ -234,7 +234,7 @@ downloadCv.addEventListener("click", ()=>{
             navSet.style.top = "0px";
             navSet.style.background = "linear-gradient(320deg, #2b2e49 40%, #353853 40%)";
             navSet.style.boxShadow = "0 0 20px #00000050";
-            navCn.style.padding = "10px";
+            navCn.style.padding = "8px 3px";
         }
 
 
