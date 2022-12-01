@@ -837,7 +837,7 @@ section .container {
     box-shadow: 0 0 5px #00000050;
     margin-left: 30px;
     margin-top: 85px;
-    animation: fade-up ease 1s 1;
+    animation: fadess ease 1s 1;
     transition: 1s ease;
     z-index: 1;
 }
