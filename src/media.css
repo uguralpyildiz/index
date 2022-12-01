@@ -135,7 +135,7 @@
     .nav-menu-header {
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: center;
         padding: 30px 0;
         font-size: 18px;
         background: linear-gradient(320deg, #2b2e49 40%, #353853 40%);
