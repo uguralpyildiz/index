@@ -406,6 +406,10 @@
             width: 60%;
         }
 
+
+       .nav-menu-header{
+         justify-content:center;
+        }
         
 
         .time-out-code,.time-out-function-code,.code-table-sidenav{
