@@ -247,7 +247,7 @@ downloadCv.addEventListener("click", ()=>{
         }
 
 
-        if (crScrollPos < 400) {
+        if (crScrollPos < 600) {
             navSet.style.boxShadow = "";
         }
 
