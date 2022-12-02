@@ -1,4 +1,3 @@
-document.html.scrollTop = document.documentElement.scrollTop = 0;
 
 
 const texts = ['Front-end Developer', 'UI & UX Developer', 'React Developer'];
