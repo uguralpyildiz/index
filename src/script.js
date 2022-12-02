@@ -35,7 +35,7 @@ const typeWrite = async () => {
 const mainRes = document.querySelector(".short-resume-i1");
 const beforeUnloads = document.querySelector(".beforeunloads")
 beforeUnloads.style.display = "none";
-
+document.body.overflowY = "hidden";
 
 setTimeout(() => {
   
@@ -56,6 +56,7 @@ setTimeout(() => {
 
     });
 
+    document.body.overflowY = "auto";
     beforeUnloads.style.display = "";
     var swiper2 = new Swiper('.swiper2', {
         effect: "coverflow",
