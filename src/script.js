@@ -33,9 +33,12 @@ const typeWrite = async () => {
 }
 
 const mainRes = document.querySelector(".short-resume-i1");
+const beforeUnloads = document.querySelector(".beforeunloads")
+beforeUnloads.style.display = "none";
+
 
 setTimeout(() => {
-
+  
     mainRes.style.display = "";
     const swiper = new Swiper('.swiper', {
         effect: "cube",
@@ -52,42 +55,47 @@ setTimeout(() => {
 
 
     });
+
+    beforeUnloads.style.display = "";
+    var swiper2 = new Swiper('.swiper2', {
+        effect: "coverflow",
+        direction: 'horizontal',
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: ".swiper-pagination1",
+            clickable: true,
+        },
+        coverflowEffect: {
+            slideShadows: false,
+            rotate: 20,
+            scale: 0.55,
+        }
+
+    });
+
+    var swiper3 = new Swiper('.swiper3', {
+        lazy: true,
+        zoom: true,
+        direction: 'horizontal',
+        loop: false,
+        grabCursor: true,
+
+        zoom: {
+            maxRatio: 2.5,
+        }
+
+    });
+
+
 }, 3000);
 
 
-var swiper2 = new Swiper('.swiper2', {
-    effect: "coverflow",
-    direction: 'horizontal',
-    loop: true,
-    grabCursor: true,
-    autoplay: {
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
-    pagination: {
-        el: ".swiper-pagination1",
-        clickable: true,
-    },
-    coverflowEffect: {
-        slideShadows: false,
-        rotate: 20,
-        scale: 0.55,
-    }
 
-});
-
-var swiper3 = new Swiper('.swiper3', {
-    lazy: true,
-    zoom: true,
-    direction: 'horizontal',
-    loop: false,
-    grabCursor: true,
-
-    zoom: {
-        maxRatio: 2.5,
-    }
-
-});
 
 
 const linkAnmFadeTimer = document.querySelector(".link-anim-fade") 
@@ -98,9 +106,13 @@ const linkCon = document.querySelector(".nav-links-effect-container");
 setTimeout(() => {  
     linkAnmFadeTimer.style.visibility = "visible";
     navTmr.style.display = "block";
+
+
     typeWrite();
 }, 3000);
     
+
+
 const downloadCv = document.querySelector("#downloadCv");
 const downloadText = document.querySelector(".download-text");
 const spinnerAnim = document.querySelector(".spinner-anim");
@@ -114,7 +126,7 @@ downloadCv.addEventListener("click", ()=>{
     }, 250);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank you</span>'
+        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Error</span>'
     }, 2500);
 
     setTimeout(() => {
@@ -260,23 +272,6 @@ downloadCv.addEventListener("click", ()=>{
         }
      });
 
-
-     const sectionTitleZoom = document.querySelectorAll(".section-title");
-     const zoomContainer = document.querySelectorAll(".swiper-zoom-container");
-     const swiperSlide = document.querySelectorAll(".swiper-zooms");  
-        
-        for (let i = 0; i < zoomContainer.length; i++) {
-            zoomContainer[i].addEventListener("click", () => {
-                for (let i = 0; i < swiperSlide.length; i++) {
-                    if (swiperSlide[i].classList.contains("swiper-slide-zoomed")) {
-                        sectionTitleZoom[i].classList.add("active");
-                    } else {
-                        sectionTitleZoom[i].classList.remove("active");
-                    }
-                }
-
-            })
-        }
 
 
 
