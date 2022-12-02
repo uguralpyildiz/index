@@ -1,4 +1,6 @@
-
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 
 const texts = ['Front-end Developer', 'UI & UX Developer', 'React Developer'];
