@@ -118,11 +118,13 @@ setTimeout(() => {
 
 
 const downloadCv = document.querySelector("#downloadCv");
+const submitCont = document.querySelector("#submitC");
 const downloadText = document.querySelector(".download-text");
+const submitContText = document.querySelector(".submit-text");
 const spinnerAnim = document.querySelector(".spinner-anim");
 
 
-downloadCv.addEventListener("click", ()=>{
+downloadCv.addEventListener("click", () => {
     downloadText.style.top = "-100px";
     downloadCv.style.pointerEvents = "none";
     setTimeout(() => {
@@ -136,7 +138,24 @@ downloadCv.addEventListener("click", ()=>{
     setTimeout(() => {
         downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-file-arrow-down"></i>RESUME</span>'
         downloadCv.style.pointerEvents = "auto";
-    }, 7000);   
+    }, 7000);
+})
+
+submitCont.addEventListener("click", () => {
+    submitContText.style.top = "-100px";
+    submitCont.style.pointerEvents = "none";
+    setTimeout(() => {
+        submitCont.innerHTML = '<span class="spinner-anim"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></span>'
+    }, 250);
+
+    setTimeout(() => {
+        submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Bad Request (400)</span>'
+    }, 2500);
+
+    setTimeout(() => {
+        submitCont.innerHTML = 'SUBMIT'
+        submitCont.style.pointerEvents = "auto";
+    }, 7000);
 })
 
 
