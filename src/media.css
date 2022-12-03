@@ -20,9 +20,10 @@
         left: 30%;
     }
 
-    #page{
+    #page {
         width: 100% !important;
     }
+
 
 }
 
@@ -251,6 +252,16 @@
 }
 
 @media only screen and (max-width: 968px) {
+    .contact-form {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .contact-form-flex-r,
+    .contact-form-flex-l {
+        width: 70%;
+    }
+
     .about-container {
         flex-direction: column-reverse;
     }
@@ -277,6 +288,21 @@
 
 
 @media only screen and (max-width: 640px) {
+
+    .w100 {
+        width: 100% !important;
+    }
+
+    .contact-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-flex-r,
+    .contact-form-flex-l {
+        width: 100%;
+    }
+
     .name-align {
         display: none;
     }
@@ -464,13 +490,21 @@
 
 @media only screen and (max-width:455px) {
 
+    .c-name,
+    .c-email,
+    .textarea,
+    label,
+    .contact-alt {
+        font-size: 18px;
+    }
+
     .short-resume-i2 {
-            top: 30%;
-            left: 50%;
-            right: 50%;
-            transform: translate(-50%);
-            width: 80%;
-        }
+        top: 30%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+        width: 80%;
+    }
 
     .swiper2 {
         height: 250px;
