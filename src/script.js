@@ -35,7 +35,7 @@ const typeWrite = async () => {
 const mainRes = document.querySelector(".short-resume-i1");
 const beforeUnloads = document.querySelector(".beforeunloads")
 const pages = document.querySelector("#page")
-beforeUnloads.style.display = "none";
+//beforeUnloads.style.display = "none";
 document.body.overflowY = "hidden";
 pages.overflowY = "hidden";
 
@@ -141,21 +141,86 @@ downloadCv.addEventListener("click", () => {
     }, 7000);
 })
 
+const nameInput = document.querySelector(".c-name")
+const areaContainer = document.querySelectorAll(".area-container")
+const emailInput = document.querySelector(".c-email")
+const errMessage = document.querySelectorAll(".errmessage")
+const textareaInput = document.querySelector(".textarea")
+
+
 submitCont.addEventListener("click", () => {
-    submitContText.style.top = "-100px";
-    submitCont.style.pointerEvents = "none";
-    setTimeout(() => {
-        submitCont.innerHTML = '<span class="spinner-anim"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></span>'
-    }, 250);
+    console.log(nameInput.value);
+    for (let i = 0; i < areaContainer.length; i++) {
+        if (nameInput.value.trim().length < 3 || emailInput.value.trim().length < 3 || textareaInput.value.trim().length < 3) {
+            areaContainer[i].classList.add("error")
+            errMessage[i].style.display = "block";
+            if (nameInput.value.trim().length > 3) {
+                areaContainer[0].classList.remove("error")
+                errMessage[0].style.display = "none";
+            }
+            if (emailInput.value.trim().length > 3) {
+                areaContainer[1].classList.remove("error")
+                errMessage[1].style.display = "none";
+            }
+            if (textareaInput.value.trim().length > 3) {
+                areaContainer[2].classList.remove("error")
+                errMessage[2].style.display = "none";
+            }
 
-    setTimeout(() => {
-        submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Bad Request (400)</span>'
-    }, 2500);
+        } else {
+            areaContainer[i].classList.remove("error")
+            errMessage[i].style.display = "none";
+            submitContText.style.top = "-100px";
+            submitCont.style.pointerEvents = "none";
+            setTimeout(() => {
+                submitCont.innerHTML = '<span class="spinner-anim"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></span>'
+            }, 250);
 
-    setTimeout(() => {
-        submitCont.innerHTML = 'SUBMIT'
-        submitCont.style.pointerEvents = "auto";
-    }, 7000);
+            setTimeout(() => {
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Bad Request (400)</span>'
+                nameInput.value = "";
+                emailInput.value = "";
+                textareaInput.value = "";
+            }, 2500);
+
+            setTimeout(() => {
+                submitCont.innerHTML = 'SUBMIT'
+                submitCont.style.pointerEvents = "auto";
+            }, 7000);
+
+        }
+    }
+
+})
+
+nameInput.addEventListener("keyup", ()=>{
+    if (nameInput.value.trim().length > 3) {
+        areaContainer[0].classList.remove("error")
+        errMessage[0].style.display = "none";
+    }else{
+        areaContainer[0].classList.add("error")
+        errMessage[0].style.display = "block";
+    }
+})
+
+emailInput.addEventListener("keyup", () => {
+    if (emailInput.value.trim().length > 3) {
+        areaContainer[1].classList.remove("error")
+        errMessage[1].style.display = "none";
+    } else {
+        areaContainer[1].classList.add("error")
+        errMessage[1].style.display = "block";
+    }
+})
+
+textareaInput.addEventListener("keyup", () => {
+    if (textareaInput.value.trim().length > 3) {
+        areaContainer[2].classList.remove("error")
+        errMessage[2].style.display = "none";
+    } else {
+        areaContainer[2].classList.add("error")
+        errMessage[2].style.display = "block";
+    }
 })
 
 
