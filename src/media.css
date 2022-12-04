@@ -283,6 +283,12 @@
         align-items: flex-start;
         gap: 15px;
     }
+
+    .short-resume-i2 {
+        top: 30%;
+        left: 25%;
+        width: 70%;
+    }
 }
 
 
@@ -389,7 +395,7 @@
     }
 
     .swiper {
-        width: 150px;
+        width: 200px;
         height: 220px;
     }
 
@@ -461,8 +467,8 @@
 
     .short-resume-i2 {
         top: 30%;
-        left: 35%;
-        width: 60%;
+        left: 25%;
+        width: 70%;
     }
 
 
