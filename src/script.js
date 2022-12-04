@@ -35,7 +35,7 @@ const typeWrite = async () => {
 const mainRes = document.querySelector(".short-resume-i1");
 const beforeUnloads = document.querySelector(".beforeunloads")
 const pages = document.querySelector("#page")
-//beforeUnloads.style.display = "none";
+beforeUnloads.style.display = "none";
 document.body.overflowY = "hidden";
 pages.overflowY = "hidden";
 
