@@ -151,18 +151,18 @@ const textareaInput = document.querySelector(".textarea")
 submitCont.addEventListener("click", () => {
     console.log(nameInput.value);
     for (let i = 0; i < areaContainer.length; i++) {
-        if (nameInput.value.trim().length < 3 || emailInput.value.trim().length < 3 || textareaInput.value.trim().length < 3) {
+        if (nameInput.value.trim().length < 3 || emailInput.value.trim().length < 7 || textareaInput.value.trim().length < 10) {
             areaContainer[i].classList.add("error")
             errMessage[i].style.display = "block";
             if (nameInput.value.trim().length > 3) {
                 areaContainer[0].classList.remove("error")
                 errMessage[0].style.display = "none";
             }
-            if (emailInput.value.trim().length > 3) {
+            if (emailInput.value.trim().length > 7) {
                 areaContainer[1].classList.remove("error")
                 errMessage[1].style.display = "none";
             }
-            if (textareaInput.value.trim().length > 3) {
+            if (textareaInput.value.trim().length > 10) {
                 areaContainer[2].classList.remove("error")
                 errMessage[2].style.display = "none";
             }
@@ -204,7 +204,7 @@ nameInput.addEventListener("keyup", ()=>{
 })
 
 emailInput.addEventListener("keyup", () => {
-    if (emailInput.value.trim().length > 3) {
+    if (emailInput.value.trim().length > 7) {
         areaContainer[1].classList.remove("error")
         errMessage[1].style.display = "none";
     } else {
@@ -214,7 +214,7 @@ emailInput.addEventListener("keyup", () => {
 })
 
 textareaInput.addEventListener("keyup", () => {
-    if (textareaInput.value.trim().length > 3) {
+    if (textareaInput.value.trim().length > 10) {
         areaContainer[2].classList.remove("error")
         errMessage[2].style.display = "none";
     } else {
