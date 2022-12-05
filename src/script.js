@@ -35,7 +35,7 @@ const typeWrite = async () => {
 const mainRes = document.querySelector(".short-resume-i1");
 const beforeUnloads = document.querySelector(".beforeunloads")
 const pages = document.querySelector("#page")
-beforeUnloads.style.display = "none";
+//beforeUnloads.style.display = "none";
 document.body.overflowY = "hidden";
 pages.overflowY = "hidden";
 
@@ -148,17 +148,36 @@ const errMessage = document.querySelectorAll(".errmessage")
 const textareaInput = document.querySelector(".textarea")
 
 
+
+function validate(email) {
+    var emailValid = /^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/;
+    return emailValid.test(email);
+}
+
+
 submitCont.addEventListener("click", () => {
-    console.log(nameInput.value);
+
     for (let i = 0; i < areaContainer.length; i++) {
-        if (nameInput.value.trim().length < 3 || emailInput.value.trim().length < 7 || textareaInput.value.trim().length < 10) {
+        if (nameInput.value.trim().length < 3 || validate(emailInput.value) === false || textareaInput.value.trim().length < 10) {
             areaContainer[i].classList.add("error")
             errMessage[i].style.display = "block";
-            if (nameInput.value.trim().length > 3) {
+            if (nameInput.value.trim().length < 1) {
+
+                errMessage[0].innerHTML = "I need to know your name!";
+            }
+            if (emailInput.value.trim().length < 1) {
+
+                errMessage[1].innerHTML = "I need to know where to reach you!";
+            }
+            if (textareaInput.value.trim().length < 1) {
+
+                errMessage[2].innerHTML = "You need to send me a message!";
+            }
+            if (nameInput.value.trim().length > 2) {
                 areaContainer[0].classList.remove("error")
                 errMessage[0].style.display = "none";
             }
-            if (emailInput.value.trim().length > 7) {
+            if (validate(emailInput.value) === true) {
                 areaContainer[1].classList.remove("error")
                 errMessage[1].style.display = "none";
             }
@@ -166,8 +185,13 @@ submitCont.addEventListener("click", () => {
                 areaContainer[2].classList.remove("error")
                 errMessage[2].style.display = "none";
             }
+            submitCont.classList.add("shake")
+            setTimeout(() => {
+                submitCont.classList.remove("shake")
+            }, 400);
 
-        } else {
+        } else if (validate(emailInput.value) === true){
+            submitCont.classList.remove("shake")
             areaContainer[i].classList.remove("error")
             errMessage[i].style.display = "none";
             submitContText.style.top = "-100px";
@@ -194,22 +218,35 @@ submitCont.addEventListener("click", () => {
 })
 
 nameInput.addEventListener("keyup", ()=>{
+
     if (nameInput.value.trim().length > 3) {
         areaContainer[0].classList.remove("error")
         errMessage[0].style.display = "none";
-    }else{
+    }
+    if (nameInput.value.trim().length <= 3){
         areaContainer[0].classList.add("error")
         errMessage[0].style.display = "block";
+        errMessage[0].innerHTML = "Are you sure it's a name?";
+    }
+    if (nameInput.value.trim().length < 1) {
+        errMessage[0].innerHTML = "I need to know your name!";
     }
 })
 
 emailInput.addEventListener("keyup", () => {
-    if (emailInput.value.trim().length > 7) {
+
+    
+    if (validate(emailInput.value) === true) {
         areaContainer[1].classList.remove("error")
         errMessage[1].style.display = "none";
-    } else {
+    }
+    if (validate(emailInput.value) === false) {
         areaContainer[1].classList.add("error")
         errMessage[1].style.display = "block";
+        errMessage[1].innerHTML = "Uh oh, that doesn't look like an email address...";
+    }
+    if (emailInput.value.trim().length < 1) {
+        errMessage[1].innerHTML = "I need to know where to reach you!";
     }
 })
 
@@ -217,9 +254,14 @@ textareaInput.addEventListener("keyup", () => {
     if (textareaInput.value.trim().length > 10) {
         areaContainer[2].classList.remove("error")
         errMessage[2].style.display = "none";
-    } else {
+    }
+    if (textareaInput.value.trim().length <= 10) {
         areaContainer[2].classList.add("error")
         errMessage[2].style.display = "block";
+        errMessage[2].innerHTML = "Message too short!";
+    }
+    if (textareaInput.value.trim().length < 1) {
+        errMessage[2].innerHTML = "You need to send me a message!";
     }
 })
 
