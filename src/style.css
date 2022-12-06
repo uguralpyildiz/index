@@ -677,7 +677,7 @@ i{
 }
 
 .download-cv:hover::before {
-    animation: flashEffect 1s ease 3;
+    animation: flashEffect 1s ease 1;
 }
 
 @keyframes flashEffect {
