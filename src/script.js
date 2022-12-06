@@ -156,22 +156,23 @@ function validate(email) {
 
 
 submitCont.addEventListener("click", () => {
+    
 
     for (let i = 0; i < areaContainer.length; i++) {
-        if (nameInput.value.trim().length < 3 || validate(emailInput.value) === false || textareaInput.value.trim().length < 10) {
+        if (nameInput.value.trim().length < 2 || validate(emailInput.value) === false || textareaInput.value.trim().length < 10) {
             areaContainer[i].classList.add("error")
             errMessage[i].style.display = "block";
             if (nameInput.value.trim().length < 1) {
 
-                errMessage[0].innerHTML = "I need to know your name!";
+                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
             }
             if (emailInput.value.trim().length < 1) {
 
-                errMessage[1].innerHTML = "I need to know where to reach you!";
+                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
             }
             if (textareaInput.value.trim().length < 1) {
 
-                errMessage[2].innerHTML = "You need to send me a message!";
+                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
             }
             if (nameInput.value.trim().length > 2) {
                 areaContainer[0].classList.remove("error")
@@ -189,7 +190,7 @@ submitCont.addEventListener("click", () => {
             setTimeout(() => {
                 submitCont.classList.remove("shake")
             }, 400);
-
+            
         } else if (validate(emailInput.value) === true){
             submitCont.classList.remove("shake")
             areaContainer[i].classList.remove("error")
@@ -200,14 +201,19 @@ submitCont.addEventListener("click", () => {
                 submitCont.innerHTML = '<span class="spinner-anim"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></span>'
             }, 250);
 
+            var nameValue = nameInput.value;
+            const okmessage = document.querySelector(".okmessage")
             setTimeout(() => {
                 submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Bad Request (400)</span>'
+                okmessage.innerHTML = `Thank you for reaching out, ${nameValue}. I will get back to you asap!`;
+                okmessage.style.display = "block";          
                 nameInput.value = "";
                 emailInput.value = "";
                 textareaInput.value = "";
             }, 2500);
 
             setTimeout(() => {
+                okmessage.style.display = "none"
                 submitCont.innerHTML = 'SUBMIT'
                 submitCont.style.pointerEvents = "auto";
             }, 7000);
@@ -217,40 +223,43 @@ submitCont.addEventListener("click", () => {
 
 })
 
-nameInput.addEventListener("keyup", ()=>{
 
-    if (nameInput.value.trim().length > 3) {
+
+nameInput.addEventListener("input", ()=>{
+
+    if (nameInput.value.trim().length > 2) {
         areaContainer[0].classList.remove("error")
         errMessage[0].style.display = "none";
     }
-    if (nameInput.value.trim().length <= 3){
+    if (nameInput.value.trim().length <= 2){
         areaContainer[0].classList.add("error")
         errMessage[0].style.display = "block";
-        errMessage[0].innerHTML = "Are you sure it's a name?";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Are you sure it's a name?";
     }
     if (nameInput.value.trim().length < 1) {
-        errMessage[0].innerHTML = "I need to know your name!";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
     }
 })
 
-emailInput.addEventListener("keyup", () => {
+emailInput.addEventListener("input", () => {
 
+        if (validate(emailInput.value) === true) {
+            areaContainer[1].classList.remove("error")
+            errMessage[1].style.display = "none";
+        }
+        if (validate(emailInput.value) === false) {
+            areaContainer[1].classList.add("error")
+            errMessage[1].style.display = "block";
+            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Uh oh, that doesn't look like an email address...";
+        }
+        if (emailInput.value.trim().length < 1) {
+            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
+        }
     
-    if (validate(emailInput.value) === true) {
-        areaContainer[1].classList.remove("error")
-        errMessage[1].style.display = "none";
-    }
-    if (validate(emailInput.value) === false) {
-        areaContainer[1].classList.add("error")
-        errMessage[1].style.display = "block";
-        errMessage[1].innerHTML = "Uh oh, that doesn't look like an email address...";
-    }
-    if (emailInput.value.trim().length < 1) {
-        errMessage[1].innerHTML = "I need to know where to reach you!";
-    }
 })
 
-textareaInput.addEventListener("keyup", () => {
+textareaInput.addEventListener("input", () => {
+    errMessage[2].style.color = "";
     if (textareaInput.value.trim().length > 10) {
         areaContainer[2].classList.remove("error")
         errMessage[2].style.display = "none";
@@ -258,10 +267,10 @@ textareaInput.addEventListener("keyup", () => {
     if (textareaInput.value.trim().length <= 10) {
         areaContainer[2].classList.add("error")
         errMessage[2].style.display = "block";
-        errMessage[2].innerHTML = "Message too short!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Message too short!";
     }
     if (textareaInput.value.trim().length < 1) {
-        errMessage[2].innerHTML = "You need to send me a message!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
     }
 })
 
@@ -374,7 +383,6 @@ textareaInput.addEventListener("keyup", () => {
             navSet.style.position = "fixed";
             navSet.style.top = "0px";
             navSet.style.background = "linear-gradient(320deg, #2b2e49 40%, #353853 40%)";
-            navSet.style.boxShadow = "0 0 20px #00000050";
             navCn.style.padding = "8px 3px";
         }
 
@@ -382,15 +390,10 @@ textareaInput.addEventListener("keyup", () => {
         if (crScrollPos < 300) {
             navSet.style.position = "";
             navSet.style.background = "";
-            navSet.style.boxShadow = "";
             navCn.style.padding = "";
             navSet.style.top = "";
         }
 
-
-        if (crScrollPos < 600) {
-            navSet.style.boxShadow = "";
-        }
 
 
 
