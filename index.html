@@ -621,14 +621,14 @@
                             Do not hesitate to contact me through the form here or by direct email on <a class="contact-aef" href="mailto:uguryildizdev@gmail.com">uguryildizdev@gmail.com</a> regardless of the subject.
                         </div>
                     </div>
-    
+                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
                     <div class="contact-form-flex-r">
                         <div class="form-container">
-                            <form class="form-contact">
+                            <form class="form-contact" action="https://formspree.io/f/maykgrao" method="POST" target="dummyframe" novalidate>
                                 <div class="form-opt">
                                     <label>What's your name? <span>*</span></label>
                                     <div class="area-container">
-                                        <input class="c-name" type="name" required placeholder="Ugur Alp Yildiz" >
+                                        <input class="c-name" minlength="3" type="name" name="name" required placeholder="Ugur Alp Yildiz" >
                                         <div class="area"></div>
                                         <div class="errmessage-cont">
                                             <div class="errmessage"></div>
@@ -638,7 +638,7 @@
                                 <div class="form-opt">
                                     <label>Where can I reach you? <span>*</span></label>
                                     <div class="area-container">
-                                        <input class="c-email" type="email" required placeholder="uguryildizdev@gmail.com">
+                                        <input class="c-email" type="email" name="email" required placeholder="uguryildizdev@gmail.com">
                                         <div class="area"></div>
                                         <div class="errmessage-cont">
                                             <div class="errmessage"></div>
@@ -648,22 +648,26 @@
                                 <div class="form-opt">
                                     <label>What's your message? <span>*</span></label>
                                     <div class="area-container">
-                                        <textarea class="textarea" required name="1" id="1" cols="30" rows="10" placeholder="Hi Ugur, let's work!"></textarea>
+                                        <textarea class="textarea" minlength="10" name="message" required name="1" id="1" cols="30" rows="10" placeholder="Hi Ugur, let's work!"></textarea>
                                         <div class="area"></div>
                                         <div class="errmessage-cont">
-                                            <div class="errmessage"></div>
+                                            <div class="errmessage"></div>                                        
                                         </div>
+                                        <div class="errmessage-cont">
+                                            <div class="okmessage"></div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             
-
+<div class="btn-container">
+    <div class="download-center w100 fade-r">
+        <button type="submit" href="#cv" id="submitC" class="download-cv w100"><span
+                class="submit-text">SUBMIT</span></button>
+    </div>
+</div>
                         </form>
-                        <div class="btn-container">
-                                <div class="download-center w100 fade-r">
-                                    <button  href="#cv" id="submitC" class="download-cv w100"><span
-                                            class="submit-text">SUBMIT</span></button>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                     <img src="img/bgc.png">
@@ -676,7 +680,12 @@
 
     <footer>
         <div class="credits">
-           2022 © Ugur Alp Yildiz
+            <div class="copyright">
+              2022 © Ugur Alp Yildiz
+            </div>
+            <div class="credits-link">
+                <a href="https://bionluk.com/nvite8008" target="_blank"><img src="img/bionluk.png"></a><a href="https://www.fiverr.com/nvite8008" target="_blank"><img src="img/fiverr.png"></a>
+            </div>
         </div>
     </footer>
     
