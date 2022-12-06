@@ -1628,6 +1628,10 @@ section .container {
     overflow: hidden;
     height: 40px;
 }
+
+.okmessage-cont{
+   margin-bottom:15px;
+}
 .errmessage{
     position: relative;
     top: 0;
