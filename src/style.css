@@ -1647,7 +1647,7 @@ section .container {
     width: 100%;
     display: none;
     font-size: 16px;
-    color: #59fa54;
+    color: #4bb343;
     animation: errormsg ease .4s;
 }
 
