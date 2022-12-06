@@ -204,7 +204,7 @@ submitCont.addEventListener("click", () => {
             var nameValue = nameInput.value;
             const okmessage = document.querySelector(".okmessage")
             setTimeout(() => {
-                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Bad Request (400)</span>'
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'
                 okmessage.innerHTML = `Thank you for reaching out, ${nameValue}. I will get back to you asap!`;
                 okmessage.style.display = "block";          
                 nameInput.value = "";
