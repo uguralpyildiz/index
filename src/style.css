@@ -580,6 +580,21 @@ i{
     transition: .4s ease transform;
 }
 
+.okbtn {
+    background: #2bc42b50;
+    border: 2px dotted #72b98f;
+}
+.formspree{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #f1f1f1;
+}
+.formspree img{
+    width: 40px;
+    border-radius: 50%;
+}
+
 .fade-r {
     animation: fade-r ease .5s;
 }
@@ -603,6 +618,12 @@ i{
     transform: scale(0.90);
     box-shadow: 0 0 15px #00000080;
     border: 2px solid #8172b9;
+}
+
+.okbtn:hover,.okbtn:active{
+    background: #41d34150;
+    border: 2px dotted #569470;
+    transform: scale(0.90);
 }
 
 
@@ -678,6 +699,22 @@ i{
 }
 
 .download-cv:hover::before {
+    animation: flashEffect 1s ease 3;
+}
+
+.okbtn::before {
+    content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-320deg);
+        z-index: -1;
+        background: #569470;
+}
+
+.okbtn:hover::before {
     animation: flashEffect 1s ease 3;
 }
 
@@ -1622,16 +1659,17 @@ section .container {
 }
 
 
-.errmessage-cont,.okmessage-cont{
+.errmessage-cont{
     display: flex;
     align-items: flex-start;
     overflow: hidden;
     height: 40px;
 }
 
-.okmessage-cont{
-   padding-bottom:15px;
-}
+
+
+
+
 .errmessage{
     position: relative;
     top: 0;
@@ -1641,16 +1679,7 @@ section .container {
     color: #fa7e7e;
     animation: errormsg ease .4s ;
 }
-.okmessage {
-    position: relative;
-    top: 0;
-    width: 100%;
-    display: none;
-    font-size: 16px;
-    color: #4bb343;
-    animation: errormsg ease .4s;
-    padding:10px;
-}
+
 
 
 .shake{
