@@ -202,18 +202,17 @@ submitCont.addEventListener("click", () => {
             }, 250);
 
             var nameValue = nameInput.value;
-            const okmessage = document.querySelector(".okmessage")
+            
             setTimeout(() => {
-                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'
-                okmessage.innerHTML = `Thank you for reaching out, ${nameValue}. I will get back to you asap!`;
-                okmessage.style.display = "block";          
+                submitCont.classList.add("okbtn")
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'             
                 nameInput.value = "";
                 emailInput.value = "";
                 textareaInput.value = "";
             }, 2500);
 
             setTimeout(() => {
-                okmessage.style.display = "none"
+                submitCont.classList.remove("okbtn")
                 submitCont.innerHTML = 'SUBMIT'
                 submitCont.style.pointerEvents = "auto";
             }, 7000);
