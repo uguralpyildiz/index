@@ -11,7 +11,14 @@ html{
     scroll-behavior: smooth;   
 }
 
-
+::selection{
+        color: rgb(255, 255, 255);
+        background: #518bbb3f;
+    }
+::-moz-selection {
+    color: rgb(255, 255, 255);
+    background: #518bbb3f;
+}
 body{   
     /*  */
     display: block;
@@ -1363,6 +1370,8 @@ section .container {
     box-shadow: 15px 15px 0 #2f314b;
     z-index: 1;
 }
+
+
 
 .about-text{
     margin-bottom: 35px;
