@@ -1,3 +1,3 @@
 # porfolio-test.io
 portfolio-test
-<a href="https://uguralpyildiz.github.io/porfolio/">link</a>
+<a href="https://uguralpyildiz.github.io/portfolio/">link</a>
