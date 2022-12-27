@@ -132,7 +132,7 @@ downloadCv.addEventListener("click", () => {
     }, 250);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-xmark"></i>Error</span>'
+        downloadCv.innerHTML = '<span class="download-text">Try Again!</span>'
     }, 2500);
 
     setTimeout(() => {
