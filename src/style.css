@@ -592,8 +592,8 @@ i{
     height: 50px;
     background: #46377a50;
     color: #fff;
-    border: 2px dotted #8172b9;
-    border-radius: 50px;
+    border: 2px solid #8172b9;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     z-index: 1;
@@ -1237,7 +1237,7 @@ section .container {
 }
 
 .experince-alt {
-    color:#6c6f8a ;
+    color:#b7b8c1 ;
     margin: 50px 0;
     font-size: 22px;
     width: 70%;
