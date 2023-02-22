@@ -82,18 +82,6 @@ setTimeout(() => {
 
     });
 
-    var swiper3 = new Swiper('.swiper3', {
-        lazy: true,
-        zoom: true,
-        direction: 'horizontal',
-        loop: false,
-        grabCursor: true,
-
-        zoom: {
-            maxRatio: 2.5,
-        }
-
-    });
 
 
 }, 3000);
