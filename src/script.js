@@ -1,6 +1,7 @@
 
 
-const texts = ['Front-end Developer', 'UI & UX Developer', 'React Developer'];
+
+const texts = [' Frontend Developer', ' UI & UX Developer'];
 var count = 0;
 var index = 0;
 var decrement = 0;
@@ -120,11 +121,11 @@ downloadCv.addEventListener("click", () => {
     }, 250);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text">Try Again!</span>'
+        downloadCv.innerHTML = '<span class="download-text">Hata</span>'
     }, 2500);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-file-arrow-down"></i>RESUME</span>'
+        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-file-arrow-down"></i>Özgeçmiş (CV)</span>'
         downloadCv.style.pointerEvents = "auto";
     }, 7000);
 })
@@ -152,15 +153,15 @@ submitCont.addEventListener("click", () => {
             errMessage[i].style.display = "block";
             if (nameInput.value.trim().length < 1) {
 
-                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
+                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>İsminizi bilmem gerek!";
             }
             if (emailInput.value.trim().length < 1) {
 
-                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
+                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Size nereden ulaşabileceğimi bilmeliyim!";
             }
             if (textareaInput.value.trim().length < 1) {
 
-                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bana mesaj göndermeniz gerek!";
             }
             if (nameInput.value.trim().length > 2) {
                 areaContainer[0].classList.remove("error")
@@ -193,7 +194,7 @@ submitCont.addEventListener("click", () => {
             
             setTimeout(() => {
                 submitCont.classList.add("okbtn")
-                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'             
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Teşekkürler!</span>'             
                 nameInput.value = "";
                 emailInput.value = "";
                 textareaInput.value = "";
@@ -201,7 +202,7 @@ submitCont.addEventListener("click", () => {
 
             setTimeout(() => {
                 submitCont.classList.remove("okbtn")
-                submitCont.innerHTML = 'SUBMIT'
+                submitCont.innerHTML = 'Gönder'
                 submitCont.style.pointerEvents = "auto";
             }, 7000);
 
@@ -221,10 +222,10 @@ nameInput.addEventListener("input", ()=>{
     if (nameInput.value.trim().length <= 2){
         areaContainer[0].classList.add("error")
         errMessage[0].style.display = "block";
-        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Are you sure it's a name?";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bunun bir isim olduğundan emin misiniz?";
     }
     if (nameInput.value.trim().length < 1) {
-        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>İsminizi bilmem gerek!";
     }
 })
 
@@ -237,10 +238,10 @@ emailInput.addEventListener("input", () => {
         if (validate(emailInput.value) === false) {
             areaContainer[1].classList.add("error")
             errMessage[1].style.display = "block";
-            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Uh oh, that doesn't look like an email address...";
+            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Hmm, bu bir email adresine hiç benzemiyor...";
         }
         if (emailInput.value.trim().length < 1) {
-            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
+            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Size nereden ulaşabileceğimi bilmeliyim!";
         }
     
 })
@@ -254,10 +255,10 @@ textareaInput.addEventListener("input", () => {
     if (textareaInput.value.trim().length <= 10) {
         areaContainer[2].classList.add("error")
         errMessage[2].style.display = "block";
-        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Message too short!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Mesaj çok kısa!";
     }
     if (textareaInput.value.trim().length < 1) {
-        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bana mesaj göndermeniz gerek!";
     }
 })
 
@@ -295,6 +296,44 @@ textareaInput.addEventListener("input", () => {
         })
     }
    
+
+
+window.addEventListener('scroll', function () {
+    var aboutus = document.getElementById('introduction');
+    var aboutus_top = aboutus.getBoundingClientRect().top;
+    var aboutus_bottom = aboutus.getBoundingClientRect().bottom;
+
+    var products = document.getElementById('about');
+    var products_top = products.getBoundingClientRect().top;
+    var products_bottom = products.getBoundingClientRect().bottom;
+
+
+    var projects = document.getElementById('projects');
+    var projects_top = projects.getBoundingClientRect().top;
+    var projects_bottom = projects.getBoundingClientRect().bottom;
+    // console.log(products_top + 200);
+    // console.log(window.innerHeight);
+
+
+    var contact = document.getElementById('contact');
+    var contact_top = contact.getBoundingClientRect().top;
+    var contact_bottom = contact.getBoundingClientRect().bottom;
+
+    if (aboutus_top + 700 < window.innerHeight) {
+        dotLinkEffect.style.left = "10%";
+    }
+    if (products_top + 700 < window.innerHeight) {
+        dotLinkEffect.style.left = "34.5%";
+    }
+    if (projects_top + 700 < window.innerHeight) {
+        dotLinkEffect.style.left = "62%";
+    }
+    if (contact_top < 1400) {
+        dotLinkEffect.style.left = "88%";
+    }
+
+});
+
     const menuBtn = document.querySelector(".menu-btn");
     const navbarLinksM = document.querySelector(".nav-links");
     const navLinkContainer = document.querySelector(".nav-link-container");

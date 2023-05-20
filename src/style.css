@@ -19,6 +19,7 @@ html{
     color: rgb(255, 255, 255);
     background: #518bbb3f;
 }
+
 body{   
     /*  */
     display: block;
@@ -94,7 +95,7 @@ section {
 
 .scroll-top-btn{
     display: none;
-    border: 2px solid #aa6f9050;
+    border: 2px solid #8172B9;
     background: #522E4250;
     color: #fff;
     border-radius: 50%;
@@ -156,10 +157,10 @@ i{
 
 .nav-link{
     color: #fff;
-    text-align: center;
+    text-align: left;
     padding-bottom: 20px;
     text-decoration: none;
-    width: 120px;
+    padding-right:30px;
     font-size: 18px;
     color: #ffffff;
     z-index: 1;
@@ -189,7 +190,7 @@ i{
 
 .dot-link-effect{
     position: absolute;
-    left: 13%;
+    left: 10%;
     bottom: 0px;
     height: 8px;
     width: 8px;
@@ -216,13 +217,13 @@ i{
 }
 
 .active0{
-    left: 13%;
+    left: 10%;
 }
 .active1{
-    left: 38%;
+    left: 34.5%;
 }
 .active2 {
-    left: 63%;
+    left: 62%;
 }
 .active3 {
     left: 88%;
@@ -241,19 +242,19 @@ i{
 }
 
 #nth a:nth-child(1):hover ~ .dot-link-effect{
-    left: 13%;
+    left: 10% !important;
 }
 
 #nth a:nth-child(2):hover~.dot-link-effect {
-    left: 38%;
+    left: 34.5% !important;
 }
 
 #nth a:nth-child(3):hover~.dot-link-effect {
-    left: 63%;
+    left: 62% !important;
 }
 
 #nth a:nth-child(4):hover~.dot-link-effect {
-    left: 88%;
+    left: 88% !important;
 }
 
 
@@ -856,7 +857,7 @@ header .container {
     font-size: 24px;
     padding: 15px 0;
     font-weight: 400;
-    color: #dbdbdb;
+    color: #b3b3b3;
 }
 
 .home-p{
@@ -1192,7 +1193,7 @@ section .container {
 .section-boxes-wrap{
     padding: 10px 0;
     width: 30%;
-
+    text-decoration: none;
     height: auto;
     margin-bottom: 20px;
 }
@@ -1247,6 +1248,7 @@ section .container {
     position: relative;
     transition: .3s ease;
     padding: 20px;
+    cursor: pointer;
 }
 
 .section-title::before{
@@ -1255,6 +1257,7 @@ section .container {
     bottom: 0%;
     left: 0%;
     background: #35385330;
+    border: 1px solid #35385380;
     width: 100%;
     height: 90%;
     z-index: -1;
@@ -1263,7 +1266,7 @@ section .container {
 }
 
 .section-title:hover::before {
-    height: 100%;
+    background: #35385355;
 }
 
 
@@ -1289,22 +1292,32 @@ section .container {
     justify-content: space-between;
     padding:20px 10px;
     font-size: 18px;
-    color: #6c6f8a;
+    color: #abb0d7;
     white-space: nowrap;
     transition: .3s ease all;
 }
 
 .project-title {
     white-space: nowrap;
-    font-size: 28px;
+    font-size: 22px;
     color: #f1f1f1;
     transition: .3s ease;
     padding: 0 10px;
 }
 .section-box {
+    position: relative;
+    top: -20px;
     overflow: hidden;
     width: 100%;
-    border-radius: 5px;
+    height: 250px;
+    border-radius: 8px !important;
+}
+.section-box img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    background: linear-gradient(to bottom, #000,#00000020);
+    border-radius: 8px !important;
 }
 
 
@@ -1323,7 +1336,7 @@ section .container {
 }
 
 .project-date{
-    color: #6c6f8a;
+    color: #abb0d7;
 }
 
 
@@ -1390,7 +1403,8 @@ section .container {
 .about-text{
     margin-bottom: 35px;
     margin-top: 35px;
-    font-size: 18px;
+    font-size: 20px;
+  
 }
 
 .bg-sq {
@@ -1497,6 +1511,7 @@ section .container {
     align-items: flex-start;
     height: 100%;
     padding: 20px;
+    padding-bottom: 50px;
 }
 
 
@@ -1504,7 +1519,7 @@ section .container {
 .swiper2 {
     position: relative;
     width: 100%;
-    height: 200px;
+    
     margin: 50px 0;
     border-radius: 5px;
     
@@ -1531,11 +1546,11 @@ section .container {
 }
 
 .c-slider-img-container{
-    margin-top: auto;
     margin-bottom: auto;
 }
 
 .comm-header{
+    display: none;
     position: absolute;
     bottom: 10px;
     right: 5%;
@@ -1562,7 +1577,7 @@ section .container {
     position: relative;
     background: #343756;
     border-radius: 5px;  
-    box-shadow: -1px 31px 0px -14px #2f314b;
+
 }
 
 
@@ -1572,13 +1587,13 @@ section .container {
     justify-content: center;
     width: 120px;
     height: 120px;
-    border-radius: 5px;
+    border-radius: 50%;
     background: #2e3046;
 }
 .comment-slider-img img{
     width: 100px;
     height: 100px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .comment-slider-com{
