@@ -272,6 +272,7 @@ i{
 
 
 .slash{
+    visibility: hidden;
     letter-spacing:4px;
 }
 
@@ -1855,4 +1856,21 @@ footer{
     color: #424561;
     text-decoration:none;
     padding:10px;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.height100{
+    
+    min-height: 100vh;
 }
