@@ -344,7 +344,7 @@ window.addEventListener('scroll', function () {
     if (projects_top + 700 < window.innerHeight) {
         dotLinkEffect.style.left = "62%";
     }
-    if (contact_top < 1400) {
+    if (contact_top < 1000) {
         dotLinkEffect.style.left = "88%";
     }
 
@@ -424,7 +424,7 @@ window.addEventListener('scroll', function () {
         if (crScrollPos >= 400) {          
             navSet.style.position = "fixed";
             navSet.style.top = "0px";
-            navSet.style.background = "linear-gradient(320deg, #2b2e49 40%, #353853 40%)";
+            navSet.style.background = "linear-gradient(320deg, #21223a 40%, #252742 40%)";
             navCn.style.padding = "8px 3px";
         }
 
