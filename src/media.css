@@ -294,6 +294,13 @@
 
 @media only screen and (max-width: 640px) {
 
+    .swiper2 {
+            position: relative;
+            width: 100%;
+            margin: 50px 0;
+            border-radius: 5px;
+            height: 360px !important;
+        }
     .w100 {
         width: 100% !important;
     }
@@ -492,6 +499,10 @@
 }
 
 @media only screen and (max-width:455px) {
+
+    .comment-slider-container{
+        padding:14px 5px;
+    }
 
     .c-name,
     .c-email,
@@ -825,6 +836,8 @@
 }
 
 @media only screen and (max-width: 300px) {
+
+    
 
     .skills-bar-about {
         font-size: 22px;

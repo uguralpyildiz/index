@@ -83,6 +83,7 @@ setTimeout(() => {
         direction: 'horizontal',
         loop: true,
         grabCursor: true,
+
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
@@ -96,7 +97,7 @@ setTimeout(() => {
             rotate: 20,
             scale: 0.55,
         }
-
+        
     });
 
 
@@ -344,7 +345,7 @@ window.addEventListener('scroll', function () {
     if (projects_top + 700 < window.innerHeight) {
         dotLinkEffect.style.left = "62%";
     }
-    if (contact_top < 1000) {
+    if (contact_top < 700) {
         dotLinkEffect.style.left = "88%";
     }
 
