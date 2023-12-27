@@ -72,7 +72,6 @@ setTimeout(() => {
         },
         speed: 4000,
 
-
     });
 
     document.body.overflowY = "auto";
