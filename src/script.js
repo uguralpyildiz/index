@@ -137,7 +137,7 @@ downloadCv.addEventListener("click", () => {
     }, 250);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text">Hata</span>'
+        downloadCv.innerHTML = '<span class="download-text">Henüz eklemedim :(</span>'
     }, 2500);
 
     setTimeout(() => {
