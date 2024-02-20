@@ -41,7 +41,7 @@
 
 @media only screen and (max-width: 1150px) {
 
-
+   
 
     .section-box-container {
         width: 95%;
@@ -338,8 +338,8 @@
         justify-content: center;
     }
 
-    .skills-bar-about {
-        justify-content: center;
+    .skills-bar-about, .flexstart {
+        justify-content: center !important;
     }
 
     .experince-header-set {

@@ -137,11 +137,11 @@ downloadCv.addEventListener("click", () => {
     }, 250);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text">Henüz eklemedim :(</span>'
+        downloadCv.innerHTML = '<span class="download-text"><img width="26" height="26" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1" />Whatsapp</span>'
     }, 2500);
 
     setTimeout(() => {
-        downloadCv.innerHTML = '<span class="download-text"><i class="fa-solid fa-file-arrow-down"></i>Özgeçmiş (CV)</span>'
+        downloadCv.innerHTML = '<span class="download-text"><img width="26" height="26" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1" />Whatsapp</span>'
         downloadCv.style.pointerEvents = "auto";
     }, 7000);
 })
@@ -339,7 +339,7 @@ window.addEventListener('scroll', function () {
         dotLinkEffect.style.left = "10%";
     }
     if (products_top + 700 < window.innerHeight) {
-        dotLinkEffect.style.left = "34.5%";
+        dotLinkEffect.style.left = "35.5%";
     }
     if (projects_top + 700 < window.innerHeight) {
         dotLinkEffect.style.left = "62%";
@@ -406,13 +406,11 @@ window.addEventListener('scroll', function () {
 
     const navCn = document.querySelector(".nav-container");
     const navSet = document.querySelector(".nav-set");
-    const scrollTop = document.querySelector(".scroll-top-btn");
+   
     const navTtl = document.querySelector(".nav-title");
     const ns = document.querySelector(".download-center");
 
-    scrollTop.addEventListener("click", ()=>{
-        document.documentElement.scrollTop = 0;
-    })
+    
     
     document.addEventListener("scroll", ()=>{ 
 
