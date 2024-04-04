@@ -41,7 +41,21 @@
 
 @media only screen and (max-width: 1150px) {
 
-   
+    .dropws {
+            display: flex !important;
+            align-items: center !important;
+            text-align: center !important;
+            justify-content: center !important;
+            width: 165px !important;
+            padding: 12px !important;
+            border-radius: 5px !important;
+            background: #00000050;
+        }
+   .topbtns22{
+    justify-content: start;
+    flex-direction: column;
+    gap: 25px;
+   }
 
     .section-box-container {
         width: 95%;

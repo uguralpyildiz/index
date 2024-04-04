@@ -57,7 +57,7 @@ document.body.overflowY = "hidden";
 pages.overflowY = "hidden";
 
 setTimeout(() => {
-  
+
     mainRes.style.display = "";
     const swiper = new Swiper('.swiper', {
         effect: "cube",
@@ -96,7 +96,7 @@ setTimeout(() => {
             rotate: 20,
             scale: 0.55,
         }
-        
+
     });
 
 
@@ -107,19 +107,19 @@ setTimeout(() => {
 
 
 
-const linkAnmFadeTimer = document.querySelector(".link-anim-fade") 
-const navTmr = document.querySelector("nav") 
-const shortResTmr = document.querySelector(".short-resume-i1") 
+const linkAnmFadeTimer = document.querySelector(".link-anim-fade")
+const navTmr = document.querySelector("nav")
+const shortResTmr = document.querySelector(".short-resume-i1")
 const linkCon = document.querySelector(".nav-links-effect-container");
 
-setTimeout(() => {  
+setTimeout(() => {
     linkAnmFadeTimer.style.visibility = "visible";
     navTmr.style.display = "block";
 
 
     typeWrite();
 }, 3000);
-    
+
 
 
 const downloadCv = document.querySelector("#downloadCv");
@@ -161,7 +161,7 @@ function validate(email) {
 
 
 submitCont.addEventListener("click", () => {
-    
+
 
     for (let i = 0; i < areaContainer.length; i++) {
         if (nameInput.value.trim().length < 2 || validate(emailInput.value) === false || textareaInput.value.trim().length < 10) {
@@ -169,15 +169,15 @@ submitCont.addEventListener("click", () => {
             errMessage[i].style.display = "block";
             if (nameInput.value.trim().length < 1) {
 
-                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i> I need to know your name!";
+                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>İsminizi bilmem gerek!";
             }
             if (emailInput.value.trim().length < 1) {
 
-                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know from where i can contact you!";
+                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Size nereden ulaşabileceğimi bilmeliyim!";
             }
             if (textareaInput.value.trim().length < 1) {
 
-                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bana mesaj göndermeniz gerek!";
             }
             if (nameInput.value.trim().length > 2) {
                 areaContainer[0].classList.remove("error")
@@ -195,8 +195,8 @@ submitCont.addEventListener("click", () => {
             setTimeout(() => {
                 submitCont.classList.remove("shake")
             }, 400);
-            
-        } else if (validate(emailInput.value) === true){
+
+        } else if (validate(emailInput.value) === true) {
             submitCont.classList.remove("shake")
             areaContainer[i].classList.remove("error")
             errMessage[i].style.display = "none";
@@ -207,10 +207,10 @@ submitCont.addEventListener("click", () => {
             }, 250);
 
             var nameValue = nameInput.value;
-            
+
             setTimeout(() => {
                 submitCont.classList.add("okbtn")
-                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'             
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Teşekkürler!</span>'
                 nameInput.value = "";
                 emailInput.value = "";
                 textareaInput.value = "";
@@ -218,7 +218,7 @@ submitCont.addEventListener("click", () => {
 
             setTimeout(() => {
                 submitCont.classList.remove("okbtn")
-                submitCont.innerHTML = 'Send'
+                submitCont.innerHTML = 'Gönder'
                 submitCont.style.pointerEvents = "auto";
             }, 7000);
 
@@ -229,37 +229,37 @@ submitCont.addEventListener("click", () => {
 
 
 
-nameInput.addEventListener("input", ()=>{
+nameInput.addEventListener("input", () => {
 
     if (nameInput.value.trim().length > 2) {
         areaContainer[0].classList.remove("error")
         errMessage[0].style.display = "none";
     }
-    if (nameInput.value.trim().length <= 2){
+    if (nameInput.value.trim().length <= 2) {
         areaContainer[0].classList.add("error")
         errMessage[0].style.display = "block";
-        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Are you sure that this is a name?";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bunun bir isim olduğundan emin misiniz?";
     }
     if (nameInput.value.trim().length < 1) {
-        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>İsminizi bilmem gerek!";
     }
 })
 
 emailInput.addEventListener("input", () => {
 
-        if (validate(emailInput.value) === true) {
-            areaContainer[1].classList.remove("error")
-            errMessage[1].style.display = "none";
-        }
-        if (validate(emailInput.value) === false) {
-            areaContainer[1].classList.add("error")
-            errMessage[1].style.display = "block";
-            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Hmm, this is not looking like an email adress";
-        }
-        if (emailInput.value.trim().length < 1) {
-            errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know from where i can contact you";
-        }
-    
+    if (validate(emailInput.value) === true) {
+        areaContainer[1].classList.remove("error")
+        errMessage[1].style.display = "none";
+    }
+    if (validate(emailInput.value) === false) {
+        areaContainer[1].classList.add("error")
+        errMessage[1].style.display = "block";
+        errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Hmm, bu bir email adresine hiç benzemiyor...";
+    }
+    if (emailInput.value.trim().length < 1) {
+        errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Size nereden ulaşabileceğimi bilmeliyim!";
+    }
+
 })
 
 textareaInput.addEventListener("input", () => {
@@ -271,47 +271,47 @@ textareaInput.addEventListener("input", () => {
     if (textareaInput.value.trim().length <= 10) {
         areaContainer[2].classList.add("error")
         errMessage[2].style.display = "block";
-        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Message is too short!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Mesaj çok kısa!";
     }
     if (textareaInput.value.trim().length < 1) {
-        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Bana mesaj göndermeniz gerek!";
     }
 })
 
 
 
+const nthAll = document.querySelectorAll("#nth a");
+const dotLinkEffect = document.querySelector(".dot-link-effect");
+
+function removeAllClass_fromNth() {
     const nthAll = document.querySelectorAll("#nth a");
-    const dotLinkEffect = document.querySelector(".dot-link-effect");
+    for (let i = 0; i < nthAll.length; i++) {
+        dotLinkEffect.classList.remove("active" + i)
+    }
+}
 
-    function removeAllClass_fromNth() {
-        const nthAll = document.querySelectorAll("#nth a");
+for (let i = 0; i < nthAll.length; i++) {
+    nthAll[i].addEventListener("click", () => {
+        removeAllClass_fromNth()
+        dotLinkEffect.classList.add("active" + i)
+    })
+}
+
+for (let i = 0; i < nthAll.length; i++) {
+    nthAll[i].addEventListener("mouseover", () => {
         for (let i = 0; i < nthAll.length; i++) {
-            dotLinkEffect.classList.remove("active"+i)
+            nthAll[i].style.opacity = ".30"
         }
-    }
+        nthAll[i].style.opacity = "1"
+    })
 
-    for (let i = 0; i < nthAll.length; i++) {
-        nthAll[i].addEventListener("click", () => {
-            removeAllClass_fromNth()
-            dotLinkEffect.classList.add("active"+i)
-        })     
-    }
-
-    for (let i = 0; i < nthAll.length; i++) {
-        nthAll[i].addEventListener("mouseover", () => {
-            for (let i = 0; i < nthAll.length; i++) {
-                nthAll[i].style.opacity = ".30"
-            }
+    nthAll[i].addEventListener("mouseout", () => {
+        for (let i = 0; i < nthAll.length; i++) {
             nthAll[i].style.opacity = "1"
-        })
+        }
+    })
+}
 
-        nthAll[i].addEventListener("mouseout", () => {
-            for (let i = 0; i < nthAll.length; i++) {
-                nthAll[i].style.opacity = "1"
-            }
-        })
-    }
-   
 
 
 window.addEventListener('scroll', function () {
@@ -336,13 +336,13 @@ window.addEventListener('scroll', function () {
     var contact_bottom = contact.getBoundingClientRect().bottom;
 
     if (aboutus_top + 700 < window.innerHeight) {
-        dotLinkEffect.style.left = "12%";
+        dotLinkEffect.style.left = "10%";
     }
     if (products_top + 700 < window.innerHeight) {
-        dotLinkEffect.style.left = "38.5%";
+        dotLinkEffect.style.left = "35.5%";
     }
     if (projects_top + 700 < window.innerHeight) {
-        dotLinkEffect.style.left = "64%";
+        dotLinkEffect.style.left = "62%";
     }
     if (contact_top < 700) {
         dotLinkEffect.style.left = "88%";
@@ -350,100 +350,100 @@ window.addEventListener('scroll', function () {
 
 });
 
-    const menuBtn = document.querySelector(".menu-btn");
-    const navbarLinksM = document.querySelector(".nav-links");
-    const navLinkContainer = document.querySelector(".nav-link-container");
-    const downloadBtn = document.querySelector(".download-cv");
-    const menuOvelay = document.querySelector(".nav-menu-overlay");
-    const linkAn  = document.querySelectorAll(".link-anim-set");
-    const navLsT = document.querySelector(".responsive-settings-mobile-animation");
+const menuBtn = document.querySelector(".menu-btn");
+const navbarLinksM = document.querySelector(".nav-links");
+const navLinkContainer = document.querySelector(".nav-link-container");
+const downloadBtn = document.querySelector(".download-cv");
+const menuOvelay = document.querySelector(".nav-menu-overlay");
+const linkAn = document.querySelectorAll(".link-anim-set");
+const navLsT = document.querySelector(".responsive-settings-mobile-animation");
 
-    
 
-    document.addEventListener("click", (e)=>{        
-        target = e.target.parentNode; 
-        targetDef = e.target; 
 
-        if (target === menuBtn) {
-            
-            navbarLinksM.classList.add("active-nav")
-            document.body.style.overflowY = "hidden"
-            setTimeout(() => {
-                menuOvelay.style.display = "block";
-                navbarLinksM.classList.add("anim-navs")
-            }, 400);
-            setTimeout(() => {
-                navLsT.style.display = "flex";
-            }, 800);
-              
-       
-        }
+document.addEventListener("click", (e) => {
+    target = e.target.parentNode;
+    targetDef = e.target;
 
-        function closeNav() {
-            setTimeout(() => {
-                navbarLinksM.classList.remove("active-nav")
-            }, 100);
-            navbarLinksM.classList.remove("anim-navs")
-            menuOvelay.style.display = "none";
-            document.body.style.overflowY = "auto"
-            navLsT.style.display = "";
-        }
+    if (target === menuBtn) {
 
-        for (let i = 0; i < linkAn.length; i++) {
-            if (target === linkAn[i]) {
-               closeNav() 
-            }            
-        }
-       
-        if (targetDef === menuOvelay || target === linkCon) {
+        navbarLinksM.classList.add("active-nav")
+        document.body.style.overflowY = "hidden"
+        setTimeout(() => {
+            menuOvelay.style.display = "block";
+            navbarLinksM.classList.add("anim-navs")
+        }, 400);
+        setTimeout(() => {
+            navLsT.style.display = "flex";
+        }, 800);
+
+
+    }
+
+    function closeNav() {
+        setTimeout(() => {
+            navbarLinksM.classList.remove("active-nav")
+        }, 100);
+        navbarLinksM.classList.remove("anim-navs")
+        menuOvelay.style.display = "none";
+        document.body.style.overflowY = "auto"
+        navLsT.style.display = "";
+    }
+
+    for (let i = 0; i < linkAn.length; i++) {
+        if (target === linkAn[i]) {
             closeNav()
         }
-        
-        
-    });
+    }
 
-    
-
-    const navCn = document.querySelector(".nav-container");
-    const navSet = document.querySelector(".nav-set");
-   
-    const navTtl = document.querySelector(".nav-title");
-    const ns = document.querySelector(".download-center");
-
-    
-    
-    document.addEventListener("scroll", ()=>{ 
-
-        crScrollPos = window.pageYOffset; 
-        if (crScrollPos > 300) {
-            navSet.style.top = "-400px";
-        }
-   
-        if (crScrollPos >= 400) {          
-            navSet.style.position = "fixed";
-            navSet.style.top = "0px";
-            navSet.style.background = "linear-gradient(320deg, #21223a 40%, #252742 40%)";
-            navCn.style.padding = "8px 3px";
-        }
+    if (targetDef === menuOvelay || target === linkCon) {
+        closeNav()
+    }
 
 
-        if (crScrollPos < 300) {
-            navSet.style.position = "";
-            navSet.style.background = "";
-            navCn.style.padding = "";
-            navSet.style.top = "";
-        }
+});
 
 
 
+const navCn = document.querySelector(".nav-container");
+const navSet = document.querySelector(".nav-set");
+
+const navTtl = document.querySelector(".nav-title");
+const ns = document.querySelector(".download-center");
 
 
-        if (crScrollPos >= 1000) {
-            scrollTop.style.display = "block"
-        }else{
-            scrollTop.style.display = "none"
-        }
-     });
+
+document.addEventListener("scroll", () => {
+
+    crScrollPos = window.pageYOffset;
+    if (crScrollPos > 300) {
+        navSet.style.top = "-400px";
+    }
+
+    if (crScrollPos >= 400) {
+        navSet.style.position = "fixed";
+        navSet.style.top = "0px";
+        navSet.style.background = "linear-gradient(320deg, #21223a 40%, #252742 40%)";
+        navCn.style.padding = "8px 3px";
+    }
+
+
+    if (crScrollPos < 300) {
+        navSet.style.position = "";
+        navSet.style.background = "";
+        navCn.style.padding = "";
+        navSet.style.top = "";
+    }
+
+
+
+
+
+    if (crScrollPos >= 1000) {
+        scrollTop.style.display = "block"
+    } else {
+        scrollTop.style.display = "none"
+    }
+});
 
 
 

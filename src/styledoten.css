@@ -1,0 +1,68 @@
+.dot-link-effect {
+    position: absolute;
+    left: 12%;
+    bottom: 0px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #fff;
+    background: #fff;
+    transition: .8s cubic-bezier(0.18, 0.89, 0.34, 1.10) all;
+    z-index: 0;
+    animation: dot-eff ease 5s 1s infinite;
+    z-index: -1;
+}
+
+@keyframes dot-eff {
+    0% {
+        box-shadow: 0 0 15px #fff;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 15px #fff;
+    }
+}
+
+.active0 {
+    left: 12%;
+}
+
+.active1 {
+    left: 38.5%;
+}
+
+.active2 {
+    left: 64%;
+}
+
+.active3 {
+    left: 88%;
+}
+
+
+/* text-opactity */
+
+#nth a:nth-child(n):hover~.dot-link-effect {
+    transform: scale(1.20);
+    box-shadow: 0 0 20px #fff;
+}
+
+#nth a:nth-child(1):hover~.dot-link-effect {
+    left: 12% !important;
+}
+
+#nth a:nth-child(2):hover~.dot-link-effect {
+    left: 38.5% !important;
+}
+
+#nth a:nth-child(3):hover~.dot-link-effect {
+    left: 64% !important;
+}
+
+#nth a:nth-child(4):hover~.dot-link-effect {
+    left: 88% !important;
+}

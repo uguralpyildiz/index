@@ -189,76 +189,43 @@ i{
     align-items: center;
 }
 
-.dot-link-effect{
+.dropws{
+    position: relative;
+    padding: 12px !important;
+}
+
+
+
+.dropdown-c{
     position: absolute;
-    left: 10%;
-    bottom: 0px;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #fff;
-    background: #fff;
-    transition: .8s cubic-bezier(0.18, 0.89, 0.34, 1.10) all;
-    z-index: 0;
-    animation: dot-eff ease 5s 1s infinite;
-    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    background: #262345;
+    border: 2px solid #8172B9;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    transform: scale(0);
+    opacity: 0;
+    width: 100%;
+    transform-origin: top right;
+    transition: .3s ease all;
 }
-
-@keyframes dot-eff {
-    0%{
-        box-shadow: 0 0 15px #fff;
-    }
-
-    50%{
-        box-shadow: 0 0 20px #fff;
-    }
-    100% {
-        box-shadow: 0 0 15px #fff;
-    }
+.dropdown-c a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
 }
-
-.active0{
-    left: 10%;
+.dropdown-c a:hover{
+    background: #00000050;
 }
-.active1{
-    left: 34.5%;
+.dropws:hover .dropdown-c {
+    transform: scale(1);
+    opacity: 1;
 }
-.active2 {
-    left: 62%;
-}
-.active3 {
-    left: 88%;
-}
-
-
-
-
-
-
-/* text-opactity */
-
-#nth a:nth-child(n):hover ~ .dot-link-effect{
-    transform: scale(1.20);
-    box-shadow: 0 0 20px #fff;
-}
-
-#nth a:nth-child(1):hover ~ .dot-link-effect{
-    left: 10% !important;
-}
-
-#nth a:nth-child(2):hover~.dot-link-effect {
-    left: 35.5% !important;
-}
-
-#nth a:nth-child(3):hover~.dot-link-effect {
-    left: 62% !important;
-}
-
-#nth a:nth-child(4):hover~.dot-link-effect {
-    left: 88% !important;
-}
-
-
 
 .link-numbers{
 
@@ -622,7 +589,11 @@ i{
 .fade-r {
     animation: fade-r ease .5s;
 }
-
+.topbtns22{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 @keyframes fade-r {
     from {
         opacity: 0;
@@ -720,6 +691,25 @@ i{
     transform: rotate(-320deg);
     background: #8172b9;
     z-index: -1;
+}
+.flag{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: auto !important;
+    padding: 0 10px;
+}
+.flag::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-320deg);
+    background: transparent !important;
+    z-index: -1;
+    animation: none 1.2s ease infinite !important;
 }
 
 .download-cv::before {
