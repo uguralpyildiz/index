@@ -1298,7 +1298,7 @@ section .container {
     background: #ffffff20;
     white-space: nowrap;
     font-size: 22px;
-    color: aquamarine;
+    color: lightblue;
     transition: .3s ease;
     padding: 10px;
 }
