@@ -237,8 +237,48 @@ i{
     transition: .3s;
 }
 
+.wp-ab2{
+    display: none;
+}
 
-
+@media screen and (max-width:1150px) {
+    .wp-ab2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            height: 55px;
+            width: 55px;
+            font-size: 44px;
+            text-decoration: none;
+            z-index: 999;
+            background-color: #24CC63;
+            border-radius: 50%;
+            color: #fff;
+            box-shadow: 0 0 15px #00000020;
+            animation: idle2 2.3s ease infinite;
+        }
+    
+        .wp-ab2 img {
+            margin-top: 10px;
+            
+        }
+}
+@keyframes idle2 {
+    0% {
+            box-shadow: 0 0 15px #00000020;
+        }
+    
+        50% {
+            box-shadow: 0 0 35px #ffffff75;
+        }
+    
+        100% {
+            box-shadow: 0 0 15px #00000020;
+        }
+}
 .slash{
     visibility: hidden;
     letter-spacing:4px;
