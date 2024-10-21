@@ -1446,25 +1446,27 @@ section .container {
   
 }
 
-.bg-sq {
-    position: relative;
-    background-color: #17192c;
-    opacity: 1;
-    background-image: url(../img/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.bg-sq::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 350px;
-    background: linear-gradient(to bottom, #17192c, transparent);
-    z-index: 0;
-}
 
+   .form-holder iframe {
+       position: absolute;
+       top: 0;
+       left: 0;
+       border-radius: 6px;
+       height: 100vh !important;
+       width: 100vw !important;
+       z-index: -1;
+   }
+
+   .form-holder::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: #16182acc;
+       z-index: 0;
+   }
 .bg-sq::before {
     content: "";
     position: absolute;
