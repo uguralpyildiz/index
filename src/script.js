@@ -49,7 +49,59 @@ const typeWrite = async () => {
     setTimeout(typeWrite, Math.random() * 200 + 50);
 }
 
+const mainRes = document.querySelector(".short-resume-i1");
+const beforeUnloads = document.querySelector(".beforeunloads")
+const pages = document.querySelector("#page")
+beforeUnloads.style.display = "none";
+document.body.overflowY = "hidden";
+pages.overflowY = "hidden";
 
+setTimeout(() => {
+  
+    mainRes.style.display = "";
+    const swiper = new Swiper('.swiper', {
+        effect: "cube",
+        direction: 'horizontal',
+        loop: true,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+
+        },
+        speed: 4000,
+
+    });
+
+    document.body.overflowY = "auto";
+    pages.overflowY = "auto";
+    beforeUnloads.style.display = "";
+    var swiper2 = new Swiper('.swiper2', {
+        effect: "coverflow",
+        direction: 'horizontal',
+        loop: true,
+        grabCursor: true,
+
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: ".swiper-pagination1",
+            clickable: true,
+        },
+        coverflowEffect: {
+            slideShadows: false,
+            rotate: 20,
+            scale: 0.55,
+        }
+        
+    });
+
+
+
+}, 3000);
 
 
 
